@@ -1,0 +1,45 @@
+<!--
+  Generated template for the ShipsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Oh yeah!</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div swing-stack #myswing1 [stackConfig]="stackConfig" (throwoutleft)="voteUp(false)" (throwoutright)="voteUp(true)" id="card-stack">
+    <ion-card #mycards1 swing-card *ngFor="let card of cards" class="td-card">
+      <ion-item>
+        <img *ngIf="card.img" [src]="card.img">
+        <h1>{{ card.name }}</h1>
+        <p>Max Atmosphering Speed: {{ card.max_atmosphering_speed }}</p>
+      </ion-item>
+     
+    </ion-card>
+  </div>
+</ion-content>
+<ion-content padding *ngIf="showLoader">
+<div class="card_loader"><ion-icon name="md-flame" color="danger"></ion-icon></div>
+</ion-content>
+
+<ion-footer>
+  <div class="tinder-footer">
+    <div id="swipe_dislike" class="rate" (click)="voteUp(false)">
+ <ion-icon name="md-close" color="danger"></ion-icon>
+    </div>
+    <!--<div class="info"></div>-->
+    <div id="swipe_like" class="rate" (click)="voteUp(true)">
+      <ion-icon name="md-heart" color="secondary"></ion-icon>
+    </div>
+  </div>
+</ion-footer>

@@ -1,0 +1,36 @@
+
+<ion-header class="{{global.state['theme']}}">
+
+  <ion-toolbar>
+    <!--<button ion-button icon-only clear (click)="dismiss()">
+       <ion-icon name="ios-arrow-back"></ion-icon>
+    </button>-->
+    <ion-buttons start>
+      <button ion-button icon-only (click)="closeModal()">
+<ion-icon name="ios-arrow-back"></ion-icon>
+</button>
+    </ion-buttons>
+    <ion-title>{{person?.name}}</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding class="{{global.state['theme']}}">
+  <img [src]="person?.img" style="width:100%">
+  <ion-list>
+    <ion-item>
+      Age: {{person?.birth_year}}
+    </ion-item>
+    <ion-item>
+      Eyes: {{person?.eye_color}}
+    </ion-item>
+    <ion-item>
+      Hieght: {{person?.height}}
+    </ion-item>
+
+  </ion-list>
+  <hr> Bio: <br>
+
+  <p>{{person?.bio}}</p>
+</ion-content>
